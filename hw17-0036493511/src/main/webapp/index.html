@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Photo Gallery</title>
+      <style>
+      	body {
+      		text-align: center;
+      		color: blue;
+      	}
+      	
+		.btn {
+		  padding: 10px 20px;
+		  font-size: 20px;
+		  text-align: center;
+		  cursor: pointer;
+		  outline: none;
+		  color: #fff;
+		  background-color: #4CAF50;
+		  border: none;
+		  border-radius: 15px;
+		  box-shadow: 0 5px #999;
+		  margin: 5px;
+		}
+		
+		.btn:hover {background-color: #3e8e41}
+		
+		.btn:active {
+		  background-color: #3e8e41;
+		  box-shadow: 0 5px #666;
+		  transform: translateY(4px);
+		}
+		
+		img {
+		    max-width: 100%;
+		    height: auto;
+		}
+		
+		.zoom:hover {
+		    -ms-transform: scale(1.2); /* IE 9 */
+		    -webkit-transform: scale(1.2); /* Safari 3-8 */
+		    transform: scale(1.2); 
+		}
+		
+      </style>
+      <script type="text/javascript"><!--
+	      function getTags() {
+	          var xmlhttp;
+	          if (window.XMLHttpRequest) {
+	              xmlhttp=new XMLHttpRequest();
+	          } else {
+	              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	          }
+	          xmlhttp.onreadystatechange = function() {
+	              if(xmlhttp.readyState==4 && xmlhttp.status==200) {
+	                  var text = xmlhttp.responseText;
+	                  var tags = JSON.parse(text);
+	                  var html = "";
+	                  for(var i = 0; i < tags.length; i++) {
+	                     html += '<input type="button" class="btn" value="' + tags[i] + '" onClick="showThumbs(\'' + tags[i] + '\')" />';
+	                  }
+	                  document.getElementById("tags").innerHTML = html;
+	              }
+	          }
+	          xmlhttp.open("GET", "servleti/tags", true);
+	          xmlhttp.send();
+	      }
+      
+         function showPicture(picture, description, tags) {
+             var url = "servleti/getPicture?fileName=" + picture;
+             var html = '<br>' + tags + '<br>' + '<img src="' + url + '"/>';
+             html += '<span onclick="document.getElementById(\'box\').style.display=\'none\'">&times;</span>';
+             document.getElementById("picture").innerHTML = html;
+             
+             var header = '<h2>' + description + '</h2>';
+             document.getElementById("header").innerHTML = header;
+             
+         }
+      
+         function showThumbs(tag) {
+             var xmlhttp;
+             if (window.XMLHttpRequest) {
+                 xmlhttp=new XMLHttpRequest();
+             } else {
+                 xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+             }
+             
+             xmlhttp.onreadystatechange = function() {
+                 if(xmlhttp.readyState==4 && xmlhttp.status==200) {
+                     var text = xmlhttp.responseText;
+                     var pics = JSON.parse(text);
+                     var html = "";
+                     for(var i = 0; i < pics.length; i++) {
+                         var url = "servleti/getThumb?fileName=" + pics[i].name;
+                         html += '<img src="' + url + '"hspace="10" class="zoom" onClick="showPicture(\'' + pics[i].name + '\', \'' + pics[i].description + '\', \'' + pics[i].tags + '\')"/>';
+                     }
+                     document.getElementById("thumbs").innerHTML = html;
+                 }
+             }
+             xmlhttp.open("GET", "servleti/picture?tag=" + tag, true);
+             xmlhttp.send();
+         }
+         
+         //-->
+      </script>
+   </head>
+   <body onload="getTags()" bgcolor="#56B6FB">
+      <h1>WELCOME TO GALLERY</h1>
+      <div align="center" id="tags">&nbsp;</div><br>
+      <div id="thumbs">&nbsp;</div>
+      <div id="box">
+         <div>
+            <header id="header"></header>
+            <div align="center" id="picture"></div>
+         </div>
+      </div>
+   </body>
+</html>

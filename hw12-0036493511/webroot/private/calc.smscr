@@ -1,0 +1,29 @@
+{$ = "text/html" @setMimeType $}
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Zbrajanje</h1>
+
+<table border="1">
+	<tr>
+		<td align="center">a</td>
+		<td align="center">{$ = "a" 0 @tparamGet $}</td>
+	</tr>
+	<tr>
+		<td align="center">b</td>
+		<td align="center">{$ = "b" 0 @tparamGet $}</td>
+	</tr>
+	<tr>
+		<td align="center">a+b</td>
+		<td align="center">{$ = "zbroj" 0 @tparamGet $}</td>
+	</tr>
+</table>
+
+<br>
+<a href="http://127.0.0.1:5721/index2.html">Back</a>
+<br>
+
+</body>
+</html>

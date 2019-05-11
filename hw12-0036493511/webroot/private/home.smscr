@@ -1,0 +1,31 @@
+{$ = "text/html" @setMimeType $}
+<!DOCTYPE html>
+<html>
+	<body bgcolor="{$= "background" "#7f7f7f"  @tparamGet $}">
+		<p> Smart Scripts: </p>
+		<a href="http://127.0.0.1:5721/scripts/osnovni.smscr">osnovni</a>
+		<a href="http://127.0.0.1:5721/scripts/brojPoziva.smscr">brojPoziva</a>
+		<a href="http://127.0.0.1:5721/scripts/fibonaccih.smscr">fibonaccih</a>
+		<p> Workers: </p>
+		<a href="http://127.0.0.1:5721/ext/HelloWorker">HelloWorker</a>
+		<a href="http://127.0.0.1:5721/ext/CircleWorker">CircleWorker</a>
+		<br><br>
+		<form action="/calc" method="GET">
+			Parametar a: <input type="number" name="a"><br>
+			Parametar b: <input type="number" name="b"><br><br>
+			<input type="submit" value="Submit">
+		</form>
+		<br>
+		<form action="/setbgcolor" method="GET">
+		<SELECT name="bgcolor">
+			<OPTION value="FFFFFF" style="background-color: White;">White</OPTION>
+			<OPTION value="FF0000" style="background-color: Red;">Red</OPTION>
+			<OPTION value="0000FF" style="background-color: Blue;">Blue</OPTION>
+			<OPTION value="008000" style="background-color: Green;">Green</OPTION>
+			<OPTION value="FFA500" style="background-color: Orange;">Orange</OPTION>
+		</SELECT>
+		<input type="submit" value="Submit">
+		</form>
+	</body>
+</html>
+

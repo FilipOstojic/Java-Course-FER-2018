@@ -1,0 +1,66 @@
+zadar.jpg
+Old city of Zadar
+city,zadar,summer
+pozdrav_suncu.jpg
+Monument to the Sun or The Greeting to the Sun in Zadar
+zadar,greeting
+dubrovnik.jpg
+Old city of Dubrovnik
+city,dubrovnik,summer
+zidine.jpg
+Dubrovnik city walls
+dubrovnik,walls
+zagreb.jpg
+Park Zrinjevac in Zagreb
+city,zagreb,winter
+skiing.jpg
+Skiing in the Alps
+sport,winter,skiing,fun
+surfing.jpg
+Man surfing in the ocean
+sport,surfing,summer,fun
+jetski.jpg
+Riding a jetski 
+summer,fun
+dubai.jpg
+Dubai from air
+city,dubai
+beach.jpg
+Sand beach in Porto Rico
+beach,summer,sand
+volleyball.jpg
+Playing beach volleball on summer holidays
+sport,sand,fun
+cameleon.jpg
+Cameleon in nature
+animal,cameleon,wildlife
+elephant.jpg
+Elephant in Africa
+animal,elephant,wildlife
+lion.jpg
+Lion in Africa
+animal,lion,safari
+giraffe.jpg
+Giraffe in Africa
+animal,giraffe,safari
+safari1.jpg
+Safari in Africa
+safari,wildlife
+safari2.jpg
+Logo from safari browser
+safari,browser
+firefox.jpg
+Logo from firefox browser
+fox,browser
+fox.jpg
+Fox in the snow
+animal,fox,winter
+opera.jpg
+Logo from opera browser
+opera,browser
+opera2.jpg
+Opera house in Philliphines
+opera,music
+opera3.jpg
+Opera club in Zagreb
+opera,music,fun
