@@ -1,0 +1,4 @@
+samo tekst 234 34.4 "string" @funkcija
+
+varijabla {$= @funkcija "string" 7890 + -2.2 $}
+
